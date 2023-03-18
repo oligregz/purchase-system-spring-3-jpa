@@ -1,8 +1,14 @@
 package com.gos.purchase.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+/**
+ * User entity.
+ */
+public class User implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   private Long id;
 
@@ -17,6 +23,9 @@ public class User {
   public User() {
   }
 
+  /**
+   * Contructor with params.
+   */
   public User(Long id, String name, String email, String phone, String password) {
     super();
     this.id = id;
@@ -73,12 +82,15 @@ public class User {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj)
+    if (this == obj) {
       return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
+    }
+    if (obj == null) {
+      return false;      
+    }
+    if (getClass() != obj.getClass()) {
+      return false;      
+    }
     User other = (User) obj;
     return Objects.equals(id, other.id);
   }
