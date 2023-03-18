@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.gos.purchase.entities.Order;
-import com.gos.purchase.repositories.UserRepositry;
+import com.gos.purchase.repositories.OrderRepositry;
 
 /**
  * Service.
