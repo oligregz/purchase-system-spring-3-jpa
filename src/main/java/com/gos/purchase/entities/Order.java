@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
@@ -12,6 +15,7 @@ import java.util.Objects;
  * Order Model.
  */
 @Entity
+@Table(name = "tb_order")
 public class Order implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -22,6 +26,8 @@ public class Order implements Serializable {
 
   private Instant moment;
 
+  @ManyToOne
+  @JoinColumn(name = "client_id")
   private User client;
 
   public Order() {
